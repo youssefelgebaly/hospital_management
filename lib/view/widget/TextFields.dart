@@ -43,7 +43,6 @@ Widget defaultFormField({
       controller: controller,
       keyboardType: type,
       obscureText: isPassword,
-
       // onFieldSubmitted: (s){
       //   onSubmit!(s);
       // },
@@ -51,13 +50,17 @@ Widget defaultFormField({
       {
         return validate(value);
       },
-
       decoration: InputDecoration(
-        fillColor:primaryColor ,
-        hoverColor: primaryColor,
-        hintText: 'lll',
-        focusColor: primaryColor,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: primaryColor),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
         labelText: label,
+       // hintText: label,
         prefixIcon: prefix,
         suffixIcon: suffix != null ? IconButton(
           onPressed: (){

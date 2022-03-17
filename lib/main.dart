@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         primaryColor: primaryColor,
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
       ),
-      home: const LoginScreen(),
+      home: const SplashScreen(),
     );
   }
 }

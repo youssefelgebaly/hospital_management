@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hospital_management_system/view/screens/login_screen.dart';
 import 'package:hospital_management_system/view/widget/constants.dart';
 import 'package:lottie/lottie.dart';
 class PrototypeScreen extends StatelessWidget {
@@ -30,7 +31,9 @@ class PrototypeScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      OutlinedButton(onPressed: (){}, child: Text('Doctor',style: TextStyle(color: primaryColor.withOpacity(.6)),)),
+                      OutlinedButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                      }, child: Text('Doctor',style: TextStyle(color: primaryColor.withOpacity(.6)),)),
                       SizedBox(width: 5,),
                       OutlinedButton(onPressed: (){}, child: Text('Receptionist',style: TextStyle(color: primaryColor.withOpacity(.6)),),),
                       SizedBox(width: 5,),
