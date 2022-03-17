@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(15)
           ),
           padding: EdgeInsets.all(20),
-          color:color ,
+          color:primarycolor ,
           child: Container(
             width:  MediaQuery.of(context).size.width,
             alignment: Alignment.center,
@@ -32,3 +32,29 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+Widget defaultButton({
+  double width =double.infinity ,
+  Color background =Colors.blue,
+  bool isUpperCase =true,
+  double radius= 4.0,
+  required Function() function,
+  required String text,
+})=> Container(
+  width: width,
+  height: 50.0,
+  child: MaterialButton(
+
+    onPressed:function,
+    child: Text (
+      isUpperCase ? text.toUpperCase():text,
+      style: const TextStyle(
+        color: Colors.white,
+      ),
+    ),
+  ),
+  decoration: BoxDecoration(
+    borderRadius:BorderRadius.circular(50),
+    color: background,
+  ),
+
+);
